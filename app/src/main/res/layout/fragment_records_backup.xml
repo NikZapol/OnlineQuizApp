@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context="HomeFragment">
+    <TextView
+        android:id="@+id/greetingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="15dp"
+        android:text="Здравствуйте, "
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+    <TextView
+        android:id="@+id/recordsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="15dp"
+        android:text="Ваши записи"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/greetingsTitle"
+        android:id="@+id/firstrecordlayout"
+        android:visibility="visible"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="7dp"
+        android:background="@drawable/background"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_back_sec50_10">
+
+
+            <TextView
+                android:id="@+id/instructorTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="3dp"
+                android:text="Имя вашего инструктора:"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/instructorUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:layout_toEndOf="@id/instructorTitle"
+                android:text="инструктор"
+                android:textColor="@color/purple_500"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dateTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/instructorTitle"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="3dp"
+                android:text="Дата вашего занятия:"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dateUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/instructorUser"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:layout_toEndOf="@id/dateTitle"
+                android:text="дата занятия"
+                android:textColor="@color/purple_500"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/timeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dateTitle"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="3dp"
+                android:text="Время вашего занятия:"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/timeUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dateUser"
+                android:layout_toEndOf="@id/timeTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:text="время занятия"
+                android:textColor="@color/purple_500"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/timeTitle"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:text="1"
+                android:visibility="visible"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/deleteRecordLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:visibility="visible"
+            android:background="@drawable/round_back_sec50_10">
+
+            <Button
+                android:id="@+id/deleteRecordButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Отменить запись"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/deleteRecordLayoutAgain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:visibility="gone"
+            android:background="@drawable/round_back_sec50_10">
+
+            <Button
+                android:id="@+id/deleteRecordButtonAgain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Вы уверены что хотите отменить запись?"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+
+        ------------------------------------------------------------------------
+        ------------------------------------------------------------------------
+        ------------------------------------------------------------------------
+        ------------------------------------------------------------------------
+        ------------------------------------------------------------------------
+        ------------------------------------------------------------------------
+        ------------------------------------------------------------------------
+        ------------------------------------------------------------------------
+        ------------------------------------------------------------------------
+        ------------------------------------------------------------------------
+        ------------------------------------------------------------------------
+        ------------------------------------------------------------------------
+
+
+
+
+
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/greetingsTitle"
+            android:id="@+id/secondrecordlayout"
+            android:visibility="gone"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="7dp"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="145dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_back_sec50_10">
+
+
+                <TextView
+                    android:id="@+id/instructorTitleSecondRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="3dp"
+                    android:text="Имя вашего инструктора:"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/instructorUserSecondRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_toEndOf="@id/instructorTitleSecondRecord"
+                    android:text="инструктор"
+                    android:textColor="@color/purple_500"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dateTitleSecondRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/instructorTitleSecondRecord"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="3dp"
+                    android:text="Дата вашего занятия:"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dateUserSecondRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/instructorUserSecondRecord"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_toEndOf="@id/dateTitleSecondRecord"
+                    android:text="дата занятия"
+                    android:textColor="@color/purple_500"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/timeTitleSecondRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dateTitleSecondRecord"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="3dp"
+                    android:text="Время вашего занятия:"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/timeUserSecondRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dateUserSecondRecord"
+                    android:layout_toEndOf="@id/timeTitleSecondRecord"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:text="время занятия"
+                    android:textColor="@color/purple_500"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/timeTitleSecondRecord"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="5dp"
+                    android:text="2"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="italic" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/deleteRecordLayoutSecondRecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+
+                android:background="@drawable/round_back_sec50_10">
+
+                <Button
+                    android:id="@+id/deleteRecordButtonSecondRecord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="Отменить запись"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/deleteRecordLayoutAgainSecondRecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:visibility="gone"
+                android:background="@drawable/round_back_sec50_10">
+
+                <Button
+                    android:id="@+id/deleteRecordButtonAgainSecondRecord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="Вы уверены что хотите отменить запись?"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/useridTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="20dp"
+            android:editable="false"
+            android:visibility="gone"
+            android:text="Айди пользователя Для Админа" />
+        <TextView
+            android:id="@+id/lessonidTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fullname"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#10ffffff"
+            android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+            android:drawableRight="@drawable/ic_baseline_info_24"
+            android:drawablePadding="20dp"
+            android:editable="false"
+            android:visibility="gone"
+            android:hint="Айди занятия(урока) Для Админа"
+            android:text="Айди занятия(урока) Для Админа"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white" />
+            <TextView
+                android:id="@+id/lessonidTVSecondRecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fullname"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#10ffffff"
+                android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+                android:drawableRight="@drawable/ic_baseline_info_24"
+                android:drawablePadding="20dp"
+                android:editable="false"
+                android:visibility="gone"
+                android:hint="Айди занятия(урока) Для Админа"
+                android:text="Айди занятия(урока) Для Админа"
+                android:padding="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white" />
+            <TextView
+                android:id="@+id/lessonUIslotTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fullname"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#10ffffff"
+
+                android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+                android:drawableRight="@drawable/ic_baseline_info_24"
+                android:drawablePadding="20dp"
+                android:editable="false"
+                android:visibility="gone"
+                android:hint="Айди занятия(урока) Для Админа"
+                android:text=""
+                android:padding="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white" />
+        <TextView
+            android:id="@+id/fullnameUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fullname"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#10ffffff"
+            android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+            android:drawableRight="@drawable/ic_baseline_info_24"
+            android:drawablePadding="20dp"
+            android:editable="false"
+            android:visibility="gone"
+            android:hint="Айди занятия(урока) Для Админа"
+            android:text="Айди занятия(урока) Для Админа"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white" />
+
+
+
+</LinearLayout>
+</LinearLayout>

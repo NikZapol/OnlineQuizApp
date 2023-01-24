@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="HomeFragment">
+
+    <RelativeLayout
+        android:id="@+id/menubtn1Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/round_back_sec50_10">
+
+        <Button
+            android:id="@+id/menubtn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="Перейти к тренировке билетов теории ПДД"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/menubtn2Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menubtn1Layout"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/round_back_sec50_10">
+
+        <Button
+            android:id="@+id/menubtn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="Перейти к прочтению правил ПДД"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:textSize="12dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/menubtn3Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menubtn2Layout"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/round_back_white50_10">
+
+        <Button
+            android:id="@+id/menubtn3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="Добавить новый вопрос в бд"
+            android:visibility="gone"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/choices_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonbilet1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №1"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №2"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №3"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №4"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №5"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №6"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №7"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №8"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №9"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №10"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/choices_layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonbilet11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №11"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №12"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №13"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №14"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №15"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №16"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №17"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №18"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №19"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+        <Button
+            android:id="@+id/buttonbilet20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:text="Билет №20"
+            android:textSize="15dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_back_white50_100"/>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background"
+    tools:context="HomeFragment">
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressbar"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="Запись на практическое занятие"
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_below="@id/banner"
+        android:gravity="center"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:focusable="false"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:layout_marginBottom="12dp"
+        android:hint="Выберите время для записи"
+
+        android:textColorHint="@color/black"
+        android:id="@+id/dropdown_time"
+        android:background="@drawable/round_back_sec50_10"
+        android:layout_height="wrap_content">
+        <AutoCompleteTextView
+            android:id="@+id/timeET"
+            android:visibility="visible"
+            android:focusable="false"
+            android:cursorVisible="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/dateTitle"
+        android:layout_below="@id/dropdown_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Выберите дату"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:drawableLeft="@drawable/ic_baseline_info_24"
+        android:drawableTint="@color/black"
+        android:layout_marginStart="25dp"
+        android:textStyle="italic"/>
+
+    <EditText
+        android:id="@+id/dateET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateTitle"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/round_back_sec50_10"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:drawableRight="@drawable/triangle"
+        android:drawableTint="@color/black"
+        android:drawablePadding="20dp"
+        android:focusable="false"
+        android:hint="Выберите дату"
+        android:padding="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+
+    <TextView
+        android:id="@+id/fullnameTitle"
+        android:layout_below="@id/dateET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ваше имя:"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:drawableLeft="@drawable/ic_baseline_info_24"
+        android:drawableTint="@color/black"
+        android:layout_marginStart="25dp"
+        android:textStyle="italic"/>
+
+    <EditText
+        android:id="@+id/fullname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fullnameTitle"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/round_back_selected_option"
+
+        android:focusable="false"
+
+        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+        android:drawableRight="@drawable/ic_baseline_info_24"
+        android:drawableTint="@color/color3"
+        android:drawablePadding="20dp"
+        android:hint="Ваше имя"
+        android:padding="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+    <TextView
+        android:id="@+id/instructorTitle"
+        android:layout_below="@id/fullname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ваш инструктор:"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:drawableLeft="@drawable/ic_baseline_info_24"
+        android:drawableTint="@color/black"
+        android:layout_marginStart="25dp"
+        android:textStyle="italic"/>
+
+    <EditText
+        android:id="@+id/instructor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/instructorTitle"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/round_back_selected_option"
+        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+        android:drawableRight="@drawable/ic_baseline_info_24"
+        android:drawablePadding="20dp"
+        android:drawableTint="@color/color3"
+        android:focusable="false"
+        android:hint="Инструктор"
+        android:padding="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"/>
+
+    <EditText
+        android:id="@+id/userid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:hint="Айди пользователя Для Админа"/>
+    <EditText
+        android:id="@+id/lessonidET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:hint="Айди занятия(урока) Для Админа"/>
+    <EditText
+        android:id="@+id/lessonUIslotET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:hint="Айди занятия(урока) Для Админа"
+        android:text=""/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/recordAlreadyHaveET"/>
+
+
+    <RelativeLayout
+        android:id="@+id/recordbtnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/instructor"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/round_back_secondary_100">
+
+        <Button
+            android:id="@+id/recordbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="Оставить запись на урок"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/recordbtnLayoutAgain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/instructor"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:background="@drawable/round_back_secondary_100">
+
+        <Button
+            android:id="@+id/recordbtnAgain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+
+            android:text="Вы уверены что хотите записаться на урок?"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+    </RelativeLayout>
+    <EditText
+        android:id="@+id/keyET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:hint="Айди для админа"
+        android:text="" />
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Автошкола "Пилот+"</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="time">
+        <item>8:30-10:30</item>
+        <item>11:45-13:45</item>
+        <item>14:00-16:00</item>
+        <item>16:15-18:15</item>
+        <item>18:30-20:30</item>
+    </string-array>
+</resources>
