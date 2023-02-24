@@ -25,40 +25,40 @@
 
 Скриншоты приложения 
 
-Страница авторизации: 
+<br>Страница авторизации: <br>
 ![Screenshot_1](https://user-images.githubusercontent.com/90863647/221120430-62102676-0983-4b08-b4c6-abccb11d0c99.png)
 
-Страница регистрации: 
+<br>Страница регистрации: <br>
 ![Screenshot_2](https://user-images.githubusercontent.com/90863647/221120509-340eeca7-dc1c-4b08-ae37-d53eef3ab629.png)
 
-Главная страница: 
+<br>Главная страница: <br>
 ![Screenshot_3](https://user-images.githubusercontent.com/90863647/221120576-3037c2ad-cb9f-4e0e-8d8d-e82f177997d1.png)
 
-Страница профиля:
+<br>Страница профиля:<br>
 ![Screenshot_4](https://user-images.githubusercontent.com/90863647/221120602-7c71667b-8e48-4212-bf69-1b192e4fd9be.png)
 
-Страница записи:
+<br>Страница записи:<br>
 ![Screenshot_5](https://user-images.githubusercontent.com/90863647/221120641-8cea779c-4b05-4514-ba16-daac4de3fe7c.png)
 
-Страница записи с окном выбора времени:
+<br>Страница записи с окном выбора времени:<br>
 ![Screenshot_6](https://user-images.githubusercontent.com/90863647/221120679-5b8b5719-cbb9-4207-a3d6-e1f6b5f8b40a.png)
 
-Страница записи с окном выбора даты:
+<br>Страница записи с окном выбора даты:<br>
 ![Screenshot_7](https://user-images.githubusercontent.com/90863647/221120767-eece771f-bdca-4eb6-ab32-24648b4e1420.png)
 
-Страница уроков: 
+<br>Страница уроков:<br>
 ![Screenshot_8](https://user-images.githubusercontent.com/90863647/221120823-a41b2310-400b-42d6-ae9a-a693573a45df.png)
 
-Страница начала теста: 
+<br>Страница начала теста: <br>
 ![Screenshot_9](https://user-images.githubusercontent.com/90863647/221120880-b4a6c800-df93-4605-b22f-4f0fef3995e0.png)
 
-Страница прохождения вопросов теста с неправильным ответом:
+<br>Страница прохождения вопросов теста с неправильным ответом:<br>
 ![Screenshot_10](https://user-images.githubusercontent.com/90863647/221120964-0c49a061-6de5-4ce8-a82d-76e39231db68.png)
 
-Страница прохождения вопросов теста с правильным ответом:
+<br>Страница прохождения вопросов теста с правильным ответом:<br>
 ![Screenshot_11](https://user-images.githubusercontent.com/90863647/221121010-b19d0796-1dfe-42ef-ae48-57006c2fc4d5.png)
 
-Страница результатов теста:
+<br>Страница результатов теста:<br>
 ![Screenshot_12](https://user-images.githubusercontent.com/90863647/221121478-a71a2546-dfb8-440d-aba1-cecf6a52ee42.png)
 
 
