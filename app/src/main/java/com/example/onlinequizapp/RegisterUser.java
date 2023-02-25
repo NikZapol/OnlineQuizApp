@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -21,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
-    private TextView banner,registerUser;
+    private AppCompatButton registerUser;
     private EditText EditEmail, EditPassword, EditFullname, EditAge;
     private ProgressBar progressBar;
     @Override
@@ -30,10 +31,9 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_register_user);
         mAuth = FirebaseAuth.getInstance();
 
-        banner = (TextView) findViewById(R.id.banner);
-        banner.setOnClickListener(this);
-        registerUser = (MaterialButton) findViewById(R.id.registerbtn);
-        registerUser.setOnClickListener(this);
+
+
+        registerUser = (AppCompatButton) findViewById(R.id.registerbtn);
 
         EditEmail=(EditText) findViewById(R.id.email);
         EditPassword=(EditText) findViewById(R.id.password);

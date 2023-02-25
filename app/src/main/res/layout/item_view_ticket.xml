@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/choices_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_back_sec50_10"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+    <Button
+        android:id="@+id/buttonticket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Билет №1"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+
+
+        android:background="@android:color/transparent"/>
+    </LinearLayout>
+</RelativeLayout>

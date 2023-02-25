@@ -55,10 +55,12 @@ public class QuizActivity extends AppCompatActivity {
     private CountDownTimer countDownTimer;
 
     //позиция вопроса в настоящем времени по умолч.(первый вопрос)
-    private int currentQuestionPosition = 0;
+    private int currentQuestionPosition = 1;
 
     //номер выбранного ответа. должен быть от 1 до 4(у нас 4 ответа), 0 значит никакой ответ не выбран
     private int selectedOption = 0;
+
+
 
 
     @Override

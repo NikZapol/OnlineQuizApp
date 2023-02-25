@@ -2,28 +2,48 @@ package com.example.onlinequizapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
     FirebaseUser user;
     DatabaseReference referenceUsers, referenceTickets, referenceLessonsSecondRecord;
-    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("Tickets");
+
     LinearLayout firstrecordlayout, secondrecordlayout;
     String userID;
     Button menubtn1, menubtn2, menubtn3, buttonbilet1,buttonbilet2;
     LinearLayout choicesLayout, choicesLayout2;
+
+    RecyclerView recyclerView;
+    ArrayList<Ticket> list;
+    MyAdapterTicket myAdapterTicket;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,10 +57,20 @@ public class HomeFragment extends Fragment {
         menubtn1=rootView.findViewById(R.id.menubtn1);
         menubtn2=rootView.findViewById(R.id.menubtn2);
         menubtn3=rootView.findViewById(R.id.menubtn3);
-        buttonbilet1=rootView.findViewById(R.id.buttonbilet1);
-        buttonbilet2=rootView.findViewById(R.id.buttonbilet2);
-        choicesLayout=rootView.findViewById(R.id.choices_layout);
-        choicesLayout2=rootView.findViewById(R.id.choices_layout2);
+
+
+        list = new ArrayList<>();
+        myAdapterTicket = new MyAdapterTicket(getContext(), list);
+        recyclerView = rootView.findViewById(R.id.recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+        recyclerView.setAdapter(myAdapterTicket);
+
+
+
+
+
 
         menubtn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,8 +78,9 @@ public class HomeFragment extends Fragment {
                 menubtn1.setVisibility(View.GONE);
                 menubtn2.setVisibility(View.GONE);
                 menubtn3.setVisibility(View.GONE);
-                choicesLayout.setVisibility(View.VISIBLE);
-                choicesLayout2.setVisibility(View.VISIBLE);
+                getTicketsData();
+                recyclerView.setVisibility(View.VISIBLE);
+
             }
         });
             //ticket1 = ticket 26 http://www.pdd24.com/pdd-onlain
@@ -82,30 +113,41 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        buttonbilet1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), com.example.onlinequizapp.StartActivity.class);
-                startActivity(intent);
-                intent.putExtra("message", "ticket1");
-                getActivity().startActivity(intent);
-            }
-        });
-
-        buttonbilet2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), com.example.onlinequizapp.StartActivity.class);
-                startActivity(intent);
-                intent.putExtra("message", "ticket2");
-                getActivity().startActivity(intent);
-            }
-        });
         return rootView;
     }
+    private void getTicketsData() {
+                ArrayList<Ticket> tickets = new ArrayList<>();
+                // Add the TicketList here
+                TicketList ticketList = new TicketList();
+                ticketList.add(new Ticket("Билет 1"));
+                ticketList.add(new Ticket("Билет 2"));
+                ticketList.add(new Ticket("Билет 3"));
+                ticketList.add(new Ticket("Билет 4"));
+                ticketList.add(new Ticket("Билет 5"));
+                ticketList.add(new Ticket("Билет 6"));
+                ticketList.add(new Ticket("Билет 7"));
+                ticketList.add(new Ticket("Билет 8"));
+                ticketList.add(new Ticket("Билет 9"));
+                ticketList.add(new Ticket("Билет 10"));
+                ticketList.add(new Ticket("Билет 11"));
+                ticketList.add(new Ticket("Билет 12"));
+                ticketList.add(new Ticket("Билет 13"));
+                ticketList.add(new Ticket("Билет 14"));
+                ticketList.add(new Ticket("Билет 16"));
+                ticketList.add(new Ticket("Билет 17"));
+                ticketList.add(new Ticket("Билет 18"));
+                ticketList.add(new Ticket("Билет 19"));
+                ticketList.add(new Ticket("Билет 20"));
 
-    public void updateDetail() {
-        Intent intent = new Intent(getActivity(), com.example.onlinequizapp.StartActivity.class);
-        startActivity(intent);
+
+                tickets.addAll(ticketList.getTickets());
+                list.addAll(tickets);
+                myAdapterTicket.notifyDataSetChanged();
+
+
     }
-    }
+
+
+
+
+}
