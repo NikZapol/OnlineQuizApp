@@ -26,7 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView register;
+    private TextView register, forgotpass;
     private EditText editTextEmail, editTextPassword;
     private MaterialButton signin;
     private ImageView facebookiv;
@@ -56,9 +56,31 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         facebookiv = findViewById(R.id.facebookiv);
         fastlogin = findViewById(R.id.fastlogin);
 
+        forgotpass = findViewById(R.id.forgotpass);
+
         ivanlogpassbtn = findViewById(R.id.ivanlogpassbtn);
         nikitalogpassbtn = findViewById(R.id.nikitalogpassbtn);
         oleglogpassbtn = findViewById(R.id.oleglogpassbtn);
+
+        forgotpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = editTextEmail.getText().toString();
+                mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            // Password reset email sent successfully
+                            Toast.makeText(getApplicationContext(), "Успешно отправлено письмо с сбросом пароля", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // Password reset email failed to send
+                            Toast.makeText(getApplicationContext(), "Произошла ошибка при отправлении письма с сбросом пароля", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+            }
+        });
 
         facebookiv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +88,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 fastlogin.setVisibility(View.VISIBLE);
             }
         });
+
+
 
         ivanlogpassbtn.setOnClickListener(new View.OnClickListener() {
             @Override
