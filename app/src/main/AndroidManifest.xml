@@ -16,37 +16,35 @@
         android:theme="@style/Theme.OnlineQuizApp"
         tools:targetApi="29">
         <activity
+            android:name=".BottomNavigationActivityInstructor"
+            android:exported="false" />
+        <activity
+            android:name=".LoginInstructorActivity"
+            android:exported="false" />
+        <activity
             android:name=".BottomNavigationActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".RegisterUser"
-            android:exported="true" >
-
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".QuizResult"
             android:exported="true" />
         <activity
             android:name=".StartActivity"
-            android:exported="true">
-
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".QuizActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

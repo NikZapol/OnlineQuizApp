@@ -23,7 +23,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -178,6 +182,45 @@ public class SettingsFragment extends Fragment {
         recordbtnAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Get the selected date from the date EditText
+                String selectedDate = dateET.getText().toString();
+
+                // Get the current date
+                Calendar currentDate = Calendar.getInstance();
+                long currentTimeMillis = currentDate.getTimeInMillis();
+
+                // Parse the selected date into Calendar object
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+                try {
+                    Date parsedDate = sdf.parse(selectedDate);
+                    Calendar selectedDateCalendar = Calendar.getInstance();
+                    selectedDateCalendar.setTime(parsedDate);
+
+                    // Check if the selected date is in the past
+                    if (selectedDateCalendar.before(currentDate)) {
+                        // Selected date is in the past
+                        Toast.makeText(getActivity(), "Выберите текущую или будущую дату", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    // Calculate the difference between selected date and current date in milliseconds
+                    long selectedTimeMillis = selectedDateCalendar.getTimeInMillis();
+                    long differenceMillis = selectedTimeMillis - currentTimeMillis;
+
+                    // Calculate the difference in days
+                    int differenceDays = (int) (differenceMillis / (24 * 60 * 60 * 1000));
+
+                    // Check if the difference is more than 7 days
+                    if (differenceDays > 7) {
+                        // Selected date is more than 1 week away from the current date
+                        Toast.makeText(getActivity(), "Выберите дату, не более чем на 1 неделю вперед", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                    // Handle the parse exception, if needed
+                }
+
                 progressBar.setVisibility(View.VISIBLE);
                 instructorAlreadyHaveRecord = "0";
                 checkEmpty();

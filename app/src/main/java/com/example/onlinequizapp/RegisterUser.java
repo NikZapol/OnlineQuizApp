@@ -22,8 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
-    private AppCompatButton registerUser;
-    private EditText EditEmail, EditPassword, EditFullname, EditAge;
+    private AppCompatButton registerbtn;
+    private EditText EditEmail, EditPassword, EditFullname;
     private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +33,17 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
 
 
-        registerUser = (AppCompatButton) findViewById(R.id.registerbtn);
-
+        registerbtn = (AppCompatButton) findViewById(R.id.registerbtn);
+        registerbtn.setOnClickListener(this);
         EditEmail=(EditText) findViewById(R.id.email);
         EditPassword=(EditText) findViewById(R.id.password);
         EditFullname=(EditText) findViewById(R.id.fullname);
-        EditAge=(EditText) findViewById(R.id.age);
 
         progressBar=(ProgressBar) findViewById(R.id.progressbar);
+
+
+
+
     }
 
     @Override
@@ -55,11 +58,13 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+
+
+
     private void registerUser() {
         String email= EditEmail.getText().toString().trim();
         String password= EditPassword.getText().toString().trim();
         String fullname= EditFullname.getText().toString().trim();
-        String age= EditAge.getText().toString().trim();
 
 
         if(email.isEmpty()){
@@ -92,12 +97,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
-        if(age.isEmpty()){
-            EditAge.setError("Введите ваш возраст!");
-            EditAge.requestFocus();
-            return;
-        }
-
         progressBar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -105,7 +104,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if(task.isSuccessful()){
-                            com.example.onlinequizapp.User user = new com.example.onlinequizapp.User(fullname, age, email, password);
+                            com.example.onlinequizapp.User user = new com.example.onlinequizapp.User(fullname, email, password);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -130,6 +129,5 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                         }
                     }
                 });
-
     }
 }

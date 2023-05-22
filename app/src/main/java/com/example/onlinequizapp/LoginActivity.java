@@ -26,7 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView register, forgotpass;
+    private TextView register, forgotpass, instructorlogin;
     private EditText editTextEmail, editTextPassword;
     private MaterialButton signin;
     private ImageView facebookiv;
@@ -44,9 +44,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         register = (TextView) findViewById(R.id.register);
         register.setOnClickListener(this);
-
         signin = (MaterialButton) findViewById(R.id.loginbtn);
         signin.setOnClickListener(this);
+
+        instructorlogin = (TextView) findViewById(R.id.instructorlogin);
+        instructorlogin.setOnClickListener(this);
 
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPassword = (EditText) findViewById(R.id.password);
@@ -61,6 +63,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         ivanlogpassbtn = findViewById(R.id.ivanlogpassbtn);
         nikitalogpassbtn = findViewById(R.id.nikitalogpassbtn);
         oleglogpassbtn = findViewById(R.id.oleglogpassbtn);
+
+
 
         forgotpass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +92,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 fastlogin.setVisibility(View.VISIBLE);
             }
         });
+
+
 
 
 
@@ -133,6 +139,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(new Intent(this, com.example.onlinequizapp.RegisterUser.class));
                 break;
 
+            case R.id.instructorlogin:
+                startActivity(new Intent(this, com.example.onlinequizapp.LoginInstructorActivity.class));
+                break;
+
             case R.id.loginbtn:
                 userLogin();
                 break;
@@ -167,6 +177,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         progressBar.setVisibility(View.VISIBLE);
 
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
@@ -175,6 +186,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     if(user.isEmailVerified()){
                         //redirect to user profile
                         startActivity(new Intent(LoginActivity.this, BottomNavigationActivity.class));
+                        progressBar.setVisibility(View.GONE);
                     }else{
                         user.sendEmailVerification();
                         Toast.makeText(LoginActivity.this, "Проверьте почту для верификации почты", Toast.LENGTH_LONG).show();
@@ -183,6 +195,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 }else{
                     Toast.makeText(LoginActivity.this, "Ошибка! Проверьте логин и пароль, или подключение к интернету", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
                 }
             }
         });

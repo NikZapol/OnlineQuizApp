@@ -45,7 +45,6 @@ public class ProfileFragment extends Fragment {
         userID = user.getUid();
         fullnameTV = rootView.findViewById(R.id.fullnameUser);
         emailTV = rootView.findViewById(R.id.emailUser);
-        ageTV = rootView.findViewById(R.id.ageUser);
         greetingsTV = rootView.findViewById(R.id.greetingsTitle);
         userImage = rootView.findViewById(R.id.imageUser);
         logOutButton = rootView.findViewById(R.id.logOutButton);
@@ -61,14 +60,12 @@ public class ProfileFragment extends Fragment {
                     if(userProfile != null){
                         String fullname = userProfile.fullName;
                         String email = userProfile.email;
-                        String age = userProfile.age;
                         String getImageLink = Snapshot.child("image").getValue(String.class);
 
 
                         greetingsTV.setText("Здравствуйте, " + fullname + "!");
                         fullnameTV.setText(fullname);
                         emailTV.setText(email);
-                        ageTV.setText(age);
                        //Picasso.get().load(getImageLink).into(userImage);
                         userImage.setClipToOutline(true);
                     }

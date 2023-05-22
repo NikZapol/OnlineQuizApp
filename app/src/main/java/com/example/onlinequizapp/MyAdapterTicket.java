@@ -78,6 +78,24 @@ public class MyAdapterTicket extends RecyclerView.Adapter<MyAdapterTicket.MyView
                     if(buttonticket.getText().toString() == "Билет 2"){
                         intent.putExtra("message", "ticket2");
                     }
+                    if(buttonticket.getText().toString() == "Билет 3"){
+                        intent.putExtra("message", "ticket3");
+                    }
+                    if(buttonticket.getText().toString() == "Билет 4"){
+                        intent.putExtra("message", "ticket4");
+                    }
+                    if(buttonticket.getText().toString() == "Билет 5"){
+                        intent.putExtra("message", "ticket5");
+                    }
+                    if(buttonticket.getText().toString() == "Билет 6"){
+                        intent.putExtra("message", "ticket6");
+                    }
+                    if(buttonticket.getText().toString() == "Билет 7"){
+                        intent.putExtra("message", "ticket7");
+                    }
+                    if(buttonticket.getText().toString() == "Билет 8"){
+                        intent.putExtra("message", "ticket8");
+                    }
 
                     context.startActivity(intent);
                 }

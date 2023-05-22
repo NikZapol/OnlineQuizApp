@@ -65,7 +65,7 @@
         android:layout_marginTop="20sp"
         android:layout_marginEnd="20sp"
         android:layout_marginBottom="20sp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/secondary"
         android:text="Войти" />
 
 
@@ -156,6 +156,19 @@
         android:layout_marginEnd="5sp"
         android:layout_marginBottom="5sp"
         android:text="Зарегистрироваться"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/instructorlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="5sp"
+        android:layout_marginBottom="5sp"
+        android:text="Вход для инструктора"
         android:textColor="@color/black" />
 
     <TextView
