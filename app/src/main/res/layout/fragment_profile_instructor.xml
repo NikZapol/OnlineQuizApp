@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context="HomeFragment">
+    <TextView
+        android:id="@+id/greetingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="15dp"
+        android:text="Здравствуйте, "
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/greetingsTitle"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="7dp"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_back_sec50_10">
+
+            <TextView
+                android:id="@+id/fullnameTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="3dp"
+                android:text="Ваше имя:"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fullnameUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/fullnameTitle"
+                android:text="имя"
+                android:textColor="@color/purple_500"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/emailTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fullnameTitle"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="10dp"
+                android:text="Ваша электронная почта:"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/emailUser"
+                android:layout_width="247dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/emailTitle"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="почта"
+                android:textColor="@color/purple_500"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/imageUserDefault"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/ic_baseline_person_24"
+                android:clipToOutline="true"/>
+
+        </RelativeLayout>
+        <EditText
+            android:id="@+id/userid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/instructor"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#10ffffff"
+            android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+            android:drawableRight="@drawable/ic_baseline_info_24"
+            android:drawablePadding="20dp"
+            android:editable="false"
+            android:visibility="gone"
+            android:hint="Айди пользователя Для Админа"
+            android:padding="20dp"
+            android:text="Айди пользователя Для Админа"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white" />
+        <EditText
+            android:id="@+id/lessonidET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fullname"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#10ffffff"
+            android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+            android:drawableRight="@drawable/ic_baseline_info_24"
+            android:drawablePadding="20dp"
+            android:editable="false"
+            android:visibility="gone"
+            android:hint="Айди занятия(урока) Для Админа"
+            android:text="Айди занятия(урока) Для Админа"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/white" />
+        <RelativeLayout
+            android:id="@+id/logOutLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/round_back_sec50_10">
+            <Button
+                android:id="@+id/logOutButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Выйти из профиля"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textAllCaps="false"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/logOutLayoutAgain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:visibility="invisible"
+            android:background="@drawable/round_back_selected_option_red">
+
+            <Button
+                android:id="@+id/logOutButtonAgain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Вы уверены что хотите выйти из профиля?"
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

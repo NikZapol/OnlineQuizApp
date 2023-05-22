@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context="HomeFragment">
+    <TextView
+        android:id="@+id/greetingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="15dp"
+        android:text="Здравствуйте, "
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+    <TextView
+        android:id="@+id/recordsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="15dp"
+        android:text="Ваши записи"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerview"
+        tools:listitem="@layout/item_view"/>
+
+    <TextView
+        android:id="@+id/useridTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="Айди пользователя Для Админа" />
+    <TextView
+        android:id="@+id/lessonidTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:hint="Айди занятия(урока) Для Админа" />
+    <TextView
+        android:id="@+id/lessonidTVSecondRecord"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:hint="Айди занятия(урока) Для Админа" />
+    <TextView
+        android:id="@+id/lessonUIslotTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:hint="Айди занятия(урока) Для Админа"
+        android:text="" />
+    <TextView
+        android:id="@+id/fullnameUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:hint="Айди занятия(урока) Для Админа" />
+</LinearLayout>
